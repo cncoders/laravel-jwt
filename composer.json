@@ -1,0 +1,21 @@
+{
+	"name": "cncoders/laravel-jwt",
+	"description": "a simple jwt for laravel",
+	"homepage": "https://github.com/cncoders/laravel-jwt.git",
+	"license": "MIT",
+	"keywords": ["jwt", "laravel"],
+	"authors": [
+		{
+			"name": "fuwei",
+			"email": "542928955@qq.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6",
+        "firebase/php-jwt":"5.2.0"
+	},
+	"type": "library",
+	"autoload": {
+		"psr-4": {"cncoders\\": "src"}
+	}
+}
