@@ -1,8 +1,6 @@
 <?php
 namespace cncoders\jwt;
 
-use App\contract\Utility;
-
 class JwtMiddleware
 {
     /**
@@ -21,12 +19,9 @@ class JwtMiddleware
             default: $token=''; break;
         }
 
-        try {
-            $jwtdata = \App\facades\Jwt::verifiy($token);
-            $request->jwt   = $jwtdata;
-            return $next($request);
-        } catch (JwtException $j) {
-            exit( Utility::renderJson($j->getCode(), $j->getMessage()) );
-        }
+        $jwtdata = \cncoders\Jwt::verifiy($token);
+        $request->jwt   = $jwtdata;
+        return $next($request);
+        
     }
 }
